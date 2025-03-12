@@ -97,11 +97,11 @@ services:
       PORT: 9021
     networks:
       - confluent
-    # healthcheck:
-    #   test: [ "CMD", "curl", "-f", "http://localhost:9021/health" ]
-    #   interval: 30s
-    #   timeout: 10s
-    #   retries: 
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9021/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 10
     
 
   webserver:
